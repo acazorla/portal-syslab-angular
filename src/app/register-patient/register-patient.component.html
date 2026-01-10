@@ -1,0 +1,15 @@
+<section class="register-card">
+  <h2>Registrar Paciente</h2>
+
+  <label>Nombre completo</label>
+  <input [(ngModel)]="nombre" placeholder="Nombre del paciente" />
+
+  <label>ID del paciente</label>
+  <input [(ngModel)]="id" placeholder="ID único" />
+
+  <div class="actions">
+    <button (click)="submit()" class="btn-save">Guardar</button>
+  </div>
+
+  <p class="msg" *ngIf="mensaje">{{ mensaje }}</p>
+</section>

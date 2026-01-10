@@ -1,0 +1,77 @@
+<header class="site-header">
+  <div class="header-content">
+    <h1>Pacientes y Exámenes Médicos</h1>
+    <p class="header-subtitle">Sistema de gestión de pacientes y exámenes médicos</p>
+  </div>
+  <div class="header-actions">
+    <button class="btn-change-password" (click)="showChangePassword.set(true)">
+      🔐 Cambiar Contraseña
+    </button>
+    <input 
+      class="search-input" 
+      [(ngModel)]="searchTerm" 
+      (input)="filterPatients()" 
+      placeholder="🔍 Buscar paciente por nombre o ID..."
+      type="text"
+    >
+  </div>
+</header>
+
+<app-change-password 
+  *ngIf="showChangePassword()" 
+  (close)="showChangePassword.set(false)"
+></app-change-password>
+
+<main class="container">
+  <div class="results-info">
+    <span class="results-count">
+      Mostrando {{ filteredPatients().length }} de {{ patients().length }} pacientes
+    </span>
+  </div>
+
+  <div *ngIf="filteredPatients().length > 0; else noResults" class="patients-grid">
+    <div *ngFor="let patient of filteredPatients()" class="patient-card">
+      <div class="card-header">
+        <h3>{{ patient.nombrePaciente }}</h3>
+        <span class="badge">{{ patient.examenes.length }} exámenes</span>
+      </div>
+
+      <p class="patient-id">
+        <strong>ID del Paciente:</strong>
+        <code>{{ patient.id }}</code>
+      </p>
+
+      <div class="examenes-section">
+        <h4>Exámenes Disponibles</h4>
+        <ul class="examenes-list">
+          <li *ngFor="let examen of patient.examenes; let last = last" class="examen-item">
+            <a 
+              [href]="'assets/pdfs/' + examen.rutaExamen" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="examen-link"
+            >
+              <span class="icon">📄</span>
+              <span class="name">{{ examen.nombre }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p class="no-results-text">No se encontraron pacientes que coincidan con tu búsqueda.</p>
+      <button class="btn-clear" (click)="clearSearch()">Limpiar búsqueda</button>
+    </div>
+  </ng-template>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2026 Portal SysLab - Sistema de Gestión de Pacientes</p>
+    <small>Última actualización: {{ getCurrentDate() }}</small>
+  </div>
+</footer>

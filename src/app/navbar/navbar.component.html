@@ -1,0 +1,21 @@
+<nav class="nav">
+  <div class="nav-left">
+    <img src="assets/logo.svg" alt="Logo" class="nav-logo" />
+    <div class="nav-brand">
+      <span class="brand-title">Portal SysLab</span>
+      <small class="brand-sub">Pacientes & Exámenes</small>
+    </div>
+  </div>
+
+  <ul class="nav-links" role="menubar">
+    <li><button class="nav-link" (click)="go('patients')">Listado de Pacientes</button></li>
+    <li><button class="nav-link" (click)="go('register')">Registrar Paciente</button></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="user">
+      <span class="user-name">{{ auth.username() }}</span>
+      <button class="btn-logout" (click)="logout()" aria-label="Cerrar sesión">Salir</button>
+    </div>
+  </div>
+</nav> 
