@@ -6,25 +6,16 @@ import { RegisterPatientComponent } from './register-patient/register-patient.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './services/auth.service';
 import { NavigationService } from './services/navigation.service';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ModalService } from './services/modal.service'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LoginComponent, NavbarComponent, PatientsComponent, RegisterPatientComponent],
-  template: `
-    <app-login *ngIf="!auth.isLoggedIn()" class="app-view"></app-login>
-
-    <div *ngIf="auth.isLoggedIn()" class="app-shell">
-      <app-navbar></app-navbar>
-
-      <main class="content">
-        <app-patients *ngIf="nav.currentView() === 'patients'"></app-patients>
-        <app-register-patient *ngIf="nav.currentView() === 'register'"></app-register-patient>
-      </main>
-    </div>
-  `,
+  imports: [CommonModule, LoginComponent, NavbarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent],
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public auth: AuthService, public nav: NavigationService) {}
+  constructor(public auth: AuthService, public nav: NavigationService, public modal: ModalService) {}
 }

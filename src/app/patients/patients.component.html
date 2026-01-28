@@ -1,12 +1,11 @@
 <header class="site-header">
+
   <div class="header-content">
     <h1>Pacientes y Exámenes Médicos</h1>
     <p class="header-subtitle">Sistema de gestión de pacientes y exámenes médicos</p>
   </div>
+
   <div class="header-actions">
-    <button class="btn-change-password" (click)="showChangePassword.set(true)">
-      🔐 Cambiar Contraseña
-    </button>
     <input 
       class="search-input" 
       [(ngModel)]="searchTerm" 
@@ -14,13 +13,29 @@
       placeholder="🔍 Buscar paciente por nombre o ID..."
       type="text"
     >
+        <!-- Filtro por rango de fechas -->
+    <div class="date-filter">
+      <label for="startDate">Desde:</label>
+      <input 
+        id="startDate"
+        type="date" 
+        [(ngModel)]="startDate" 
+        (change)="filterPatients()"
+        class="date-input"
+      >
+      
+      <label for="endDate">Hasta:</label>
+      <input 
+        id="endDate"
+        type="date" 
+        [(ngModel)]="endDate" 
+        (change)="filterPatients()"
+        class="date-input"
+      >
+      <button class="btn-clear-dates" (click)="clearSearch()">Limpiar filtros</button>
+   </div>
   </div>
 </header>
-
-<app-change-password 
-  *ngIf="showChangePassword()" 
-  (close)="showChangePassword.set(false)"
-></app-change-password>
 
 <main class="container">
   <div class="results-info">
@@ -39,6 +54,8 @@
       <p class="patient-id">
         <strong>ID del Paciente:</strong>
         <code>{{ patient.id }}</code>
+        <strong>Fecha Atención:</strong>
+        <code>{{ patient.fechaAtencion }}</code>
       </p>
 
       <div class="examenes-section">

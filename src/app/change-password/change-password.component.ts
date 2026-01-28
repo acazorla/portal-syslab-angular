@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent {
-  @Output() close = new EventEmitter<void>();
+  @Output() closeModal = new EventEmitter<void>();
 
   newPassword = '';
   confirmPassword = '';
@@ -50,11 +50,11 @@ export class ChangePasswordComponent {
 
     // Simular cambio de contraseña (aquí iría la llamada al backend)
     this.success = 'Contraseña cambiada exitosamente (simulado)';
-    setTimeout(() => this.close.emit(), 900);
+    setTimeout(() => this.closeModal.emit(), 900);
   }
 
   onCancel(): void {
-    this.close.emit();
+    this.closeModal.emit();  // Emite para cerrar
   }
 }
 

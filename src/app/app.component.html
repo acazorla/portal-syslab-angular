@@ -1,0 +1,16 @@
+    <app-login *ngIf="!auth.isLoggedIn()" class="app-view"></app-login>
+
+    <div *ngIf="auth.isLoggedIn()" class="app-shell">
+      <app-navbar></app-navbar>
+      
+      <!-- Modal overlay -->
+    <app-change-password 
+      *ngIf="modal.showChangePasswordModal()" 
+      (closeModal)="modal.closeChangePasswordModal()">
+    </app-change-password>
+
+      <main class="content">
+        <app-patients *ngIf="nav.currentView() === 'patients'"></app-patients>
+        <app-register-patient *ngIf="nav.currentView() === 'register'"></app-register-patient>
+      </main>
+    </div>
