@@ -1,0 +1,52 @@
+{
+  "pacientes": [
+    {
+      "idPaciente": "ID000001",
+      "tipoDocumento": "DNI",
+      "numeroDocumento": "41645678",
+      "nombrePaciente": "Alex Romel",
+      "apellidoPaterno": "Cazorla",
+      "apellidoMaterno": "Guerra",
+      "fechaNacimiento": "1990-05-15",
+      "sexo": "M",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Miraflores",
+      "direccion": "Av. Siempre Viva 123",
+      "telefono": "+51 987654321",
+      "grupoSanguineo": "O+"
+    },
+    {
+      "idPaciente": "ID000002",
+      "tipoDocumento": "DNI",
+      "numeroDocumento": "12345678",
+      "nombrePaciente": "Axel Sneider",
+      "apellidoPaterno": "Cazorla",
+      "apellidoMaterno": "Abanto",
+      "fechaNacimiento": "2013-02-11",
+      "sexo": "M",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Miraflores",
+      "direccion": "Av. Larco 123",
+      "telefono": "+51 991733568",
+      "grupoSanguineo": "O+"
+    },
+    {
+      "idPaciente": "ID000003",
+      "tipoDocumento": "DNI",
+      "numeroDocumento": "12345678",
+      "nombrePaciente": "Juan Jose",
+      "apellidoPaterno": "Gonzales",
+      "apellidoMaterno": "Trauco",
+      "fechaNacimiento": "2008-03-11",
+      "sexo": "M",
+      "departamento": "Lima",
+      "provincia": "Lima",
+      "distrito": "Miraflores",
+      "direccion": "Av. Larco 123",
+      "telefono": "+51 998633254",
+      "grupoSanguineo": "O+"
+    }
+  ]
+}

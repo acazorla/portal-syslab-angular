@@ -6,7 +6,7 @@ import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { NavigationService } from '../services/navigation.service';
 
-interface UsersResponse { users: Array<{ userName: string; password: string }>; }
+interface UsersResponse { users: Array<{ userName: string; name: string; password: string }>; }
 
 @Component({
   selector: 'app-login',
@@ -17,6 +17,7 @@ interface UsersResponse { users: Array<{ userName: string; password: string }>; 
 })
 export class LoginComponent {
   username = '';
+  name = '';
   password = '';
   error = '';
   isLoading = false;
@@ -44,7 +45,7 @@ export class LoginComponent {
       if (user) {
         const hashedInput = await this.hashPassword(this.password);
         if (hashedInput === user.password) {
-          this.auth.login(this.username);
+          this.auth.login(user.name);
           this.nav.navigate('patients');
         } else {
           this.error = 'Usuario o contraseña incorrectos';

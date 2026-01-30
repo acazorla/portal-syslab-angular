@@ -8,11 +8,12 @@ import { AuthService } from './services/auth.service';
 import { NavigationService } from './services/navigation.service';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ModalService } from './services/modal.service'; 
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LoginComponent, NavbarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent],
+  imports: [CommonModule, LoginComponent, NavbarComponent, SidebarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
