@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 
-export type ViewKey = 'patients' | 'register' | 'login' | 'change-password';
+export type ViewKey = 'patients' | 'register' | 'login' | 'change-password' | 'dashboard';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationService {

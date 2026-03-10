@@ -1,0 +1,52 @@
+{
+    "success": true,
+    "message": "Operación exitosa",
+    "data": [
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "ingresos": 21000,
+            "costos": 13500
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "ingresos": 22000,
+            "costos": 23000
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "ingresos": 25000,
+            "costos": 16000
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "ingresos": 30000,
+            "costos": 19000
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "ingresos": 42000,
+            "costos": 20000
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "size": 3,
+        "totalElements": 3,
+        "totalPages": 1
+    },
+    "meta": {
+        "timestamp": "2026-03-05T16:10:21.086119900-05:00",
+        "version": "1.0.0-SNAPSHOT",
+        "traceId": "f4b77d38-b3a5-47c6-a9ef-b71e362616ca"
+    }
+}

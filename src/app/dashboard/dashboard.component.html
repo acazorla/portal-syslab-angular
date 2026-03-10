@@ -1,0 +1,100 @@
+<header class="site-header">
+  <div class="header-content">
+    <h1>Dashboard Margen Operativo e Ingresos Netos</h1>
+    <p class="header-subtitle">Sistema de gestión de pacientes y exámenes médicos</p>
+  </div>
+  <div class="header-actions">
+    </div>
+</header>
+
+<main class="container">
+  <h3>Trimestral</h3>
+  @if (tieneDatos()) { 
+  <div class="dashboard-cards">
+    @for (t of resumenTrimestral(); track t.trimestre + t.periodo) {
+      <div class="dashboard-card">
+        <div class="card-header">
+          <span class="card-mes">{{ t.trimestre }} {{ t.periodo }}</span>
+          <span class="card-trimestre">{{ t.trimestre }}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-row">
+            <span>Ingresos:</span>
+            <span class="ingresos">{{ t.ingresos | currency:'USD' }}</span>
+          </div>
+          <div class="card-row">
+            <span>Costos:</span>
+            <span class="costos">{{ t.costos | currency:'USD' }}</span>
+          </div>
+          <div class="card-row">
+            <span>Ingreso Neto:</span>
+            <span class="neto">{{ t.ingresoNeto | currency:'USD' }}</span>
+          </div>
+          <div class="card-row">
+            <span>Margen Operativo:</span>
+            <span class="margen">{{ t.margenOperativo | percent:'1.2-2' }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+  }
+  <h3>Mensual</h3>
+    <table>
+    <thead>
+      <tr>
+        <th>Periodo</th>
+        <th>Trimestre</th>
+        <th>Mes</th>
+        <th>Ingresos</th>
+        <th>Costos</th>
+        <th>Ingreso Neto</th>
+        <th>Margen Operativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (d of datos(); track d.mes + d.periodo) {
+        <tr>
+          <td>{{ d.periodo }}</td>
+          <td>{{ d.trimestre }}</td>
+          <td>{{ getNombreMes(d.mes) }}</td>
+          <td>{{ d.ingresos | currency:'USD' }}</td>
+          <td>{{ d.costos | currency:'USD' }}</td>
+          <td>{{ d.ingresoNeto | currency:'USD' }}</td>
+          <td>{{ d.margenOperativo | percent:'1.2-2' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+ 
+  <h3>Gráfico de Ingresos, Costos e Ingreso Neto</h3>
+  <div style="display: block; width: 100%; height: 400px;">
+@if (tieneDatos()) { 
+    <canvas baseChart
+      [data]="barChartData()"
+      
+      [type]="'bar'" 
+      [options]="chartOptions">
+    </canvas>
+  } @else {
+    <p class="loading-message">Cargando gráficos...</p>
+  }
+</div>
+  <h3>Gráfico de Margen Operativo (%)</h3>
+  <div style="display: block; width: 100%; height: 400px;">
+@if (tieneDatos()) { 
+    <canvas baseChart
+      [data]="lineChartData()"
+      
+      [type]="'line'"
+      [options]="chartOptions">
+    </canvas>
+  }
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2026 Portal SysLab - Sistema de Gestión de Pacientes</p>
+  </div>
+</footer>

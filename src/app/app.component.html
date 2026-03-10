@@ -13,5 +13,6 @@
       <main class="content">
         <app-patients *ngIf="nav.currentView() === 'patients'"></app-patients>
         <app-register-patient *ngIf="nav.currentView() === 'register'"></app-register-patient>
+        <app-dashboard *ngIf="nav.currentView() === 'dashboard'"></app-dashboard>
       </main>
     </div>

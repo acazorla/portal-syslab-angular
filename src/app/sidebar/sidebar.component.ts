@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core'; // 1. Importaciones actualizadas
 import { CommonModule } from '@angular/common';
 import { NavigationService } from '../services/navigation.service';
 import { ModalService } from '../services/modal.service';
 
+// Interfaces (Se mantienen igual, son correctas)
 interface MenuItem {
   label: string;
   icon: string;
@@ -23,9 +24,12 @@ interface SubMenuItem {
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  isExpanded = false;
-  expandedMenu: string | null = null;
+  // 2. Estado reactivo con Signals (WritableSignals)
+  // Reemplazamos propiedades directas por señales mutables.
+  isExpanded = signal<boolean>(false);
+  expandedMenu = signal<string | null>(null);
 
+  // Propiedad de solo lectura (no cambia), se mantiene igual.
   menuItems: MenuItem[] = [
     {
       label: 'Administración',
@@ -38,6 +42,10 @@ export class SidebarComponent {
         {
           label: 'Registrar Paciente',
           action: () => this.nav.navigate('register')
+        },
+        {
+          label: 'Dashboard Alta Gerencia',
+          action: () => this.nav.navigate('dashboard')
         }
       ]
     },
@@ -50,25 +58,31 @@ export class SidebarComponent {
           action: () => this.modal.openChangePasswordModal()
         },
         {
-          label: 'Permisos' ,
+          label: 'Permisos',
           action: () => this.nav.navigate('register')
-         // action: () => this.nav.navigate('permissions')
+          // action: () => this.nav.navigate('permissions')
         }
       ]
     }
   ];
 
-  constructor(
-    private nav: NavigationService,
-    private modal: ModalService
-  ) {}
+  // 3. Inyección de dependencias moderna con inject()
+  // Reemplaza la inyección en el constructor.
+  private nav = inject(NavigationService);
+  private modal = inject(ModalService);
 
+  // 4. Constructor cargado eliminado (no es necesario ahora).
+
+  // 5. Métodos actualizados para usar la API de Signals (.set() / .update())
   toggleSidebar(): void {
-    this.isExpanded = !this.isExpanded;
+    // Usamos .update() para invertir el valor booleano de la señal
+    this.isExpanded.update(value => !value);
   }
 
   toggleSubmenu(menuLabel: string): void {
-    this.expandedMenu = this.expandedMenu === menuLabel ? null : menuLabel;
+    // Usamos .set() para establecer un nuevo valor.
+    // Leemos el valor actual consumiendo la señal con ().
+    this.expandedMenu.set(this.expandedMenu() === menuLabel ? null : menuLabel);
   }
 
   handleMenuClick(item: MenuItem): void {
@@ -82,6 +96,7 @@ export class SidebarComponent {
   handleSubmenuClick(action: () => void, event: Event): void {
     event.stopPropagation();
     action();
-    this.isExpanded = false;  // Cierra el sidebar en móvil
+    // Cerramos el sidebar en móvil usando .set()
+    this.isExpanded.set(false);
   }
 }

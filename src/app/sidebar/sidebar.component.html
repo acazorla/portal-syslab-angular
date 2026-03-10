@@ -1,48 +1,52 @@
-<aside class="sidebar" [class.expanded]="isExpanded">
+<aside class="sidebar" [class.expanded]="isExpanded()">
   <div class="sidebar-header">
     <button class="toggle-btn" (click)="toggleSidebar()" aria-label="Abrir/Cerrar menú">
       ☰
     </button>
-    <span class="sidebar-title" *ngIf="isExpanded">Menú</span>
+    @if (isExpanded()) {
+      <span class="sidebar-title">Menú</span>
+    }
   </div>
 
   <nav class="sidebar-nav">
     <ul class="menu-list">
-      <li *ngFor="let item of menuItems" class="menu-item">
-        <button 
-          class="menu-link" 
-          (click)="handleMenuClick(item)"
-          [class.active]="expandedMenu === item.label"
-          [attr.aria-expanded]="expandedMenu === item.label"
-        >
-          <span class="menu-icon">{{ item.icon }}</span>
-          <span class="menu-label" *ngIf="isExpanded">{{ item.label }}</span>
-          <span class="menu-arrow" *ngIf="item.submenu && isExpanded">
-            ▼
-          </span>
-        </button>
+      @for (item of menuItems; track item.label) {
+        <li class="menu-item">
+          <button 
+            class="menu-link" 
+            (click)="handleMenuClick(item)"
+            [class.active]="expandedMenu() === item.label"
+            [attr.aria-expanded]="expandedMenu() === item.label"
+          >
+            <span class="menu-icon">{{ item.icon }}</span>
+            @if (isExpanded()) {
+              <span class="menu-label">{{ item.label }}</span>
+            }
+            @if (item.submenu && isExpanded()) {
+              <span class="menu-arrow">▼</span>
+            }
+          </button>
 
-        <ul 
-          class="submenu" 
-          *ngIf="item.submenu && expandedMenu === item.label && isExpanded"
-        >
-          <li *ngFor="let subitem of item.submenu" class="submenu-item">
-            <button 
-              class="submenu-link"
-              (click)="handleSubmenuClick(subitem.action, $event)"
-            >
-              {{ subitem.label }}
-            </button>
-          </li>
-        </ul>
-      </li>
+          @if (item.submenu && expandedMenu() === item.label && isExpanded()) {
+            <ul class="submenu">
+              @for (subitem of item.submenu; track subitem.label) {
+                <li class="submenu-item">
+                  <button 
+                    class="submenu-link"
+                    (click)="handleSubmenuClick(subitem.action, $event)"
+                  >
+                    {{ subitem.label }}
+                  </button>
+                </li>
+              }
+            </ul>
+          }
+        </li>
+      }
     </ul>
   </nav>
 </aside>
 
-<!-- Overlay para cerrar sidebar en móvil -->
-<div 
-  class="sidebar-overlay" 
-  *ngIf="isExpanded"
-  (click)="toggleSidebar()"
-></div>
+@if (isExpanded()) {
+  <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+}

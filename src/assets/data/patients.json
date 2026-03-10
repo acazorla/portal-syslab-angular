@@ -77,7 +77,7 @@
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
         {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"https://CPLTFSPR01/MEDICINA OCUPACIONAL/GENERAL_1432839.pdf"}
+        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"//CPLTFSPR01/MEDICINA OCUPACIONAL/GENERAL_1432839.pdf"}
       ]
     },
         {
