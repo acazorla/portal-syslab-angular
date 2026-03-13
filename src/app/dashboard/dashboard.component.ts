@@ -192,4 +192,42 @@ return {
     ];
     return meses[numero - 1] || '';
   }
+
+  descargarReporte(): void {
+    const datosActuales = this.datos();
+    //if (datosActuales.length === 0) return;
+    if (!datosActuales.length) return;
+    // Definimos los encabezados de las columnas
+    const encabezados = ['Periodo', 'Trimestre', 'Mes', 'Ingresos', 'Costos', 'Neto', 'Margen %'];
+
+    // Convertimos cada fila de datos a texto separado por comas
+    const filas = datosActuales.map(d => [
+      d.periodo,
+      d.trimestre,
+      this.getNombreMes(d.mes),
+      d.ingresos.toFixed(2),
+      d.costos.toFixed(2),
+      d.ingresoNeto.toFixed(2),
+      (d.margenOperativo * 100).toFixed(2)
+    ].join(',')); 
+      // Unimos todo con saltos de línea y añadimos el código para que Excel lea tildes (\ufeff)
+      const contenido = '\ufeff' + [encabezados.join(','), ...filas].join('\n');
+
+      // Creamos el archivo en memoria (Blob)
+      const blob = new Blob([contenido], { type: 'text/csv;charset=utf-8;' });
+      const url = window.URL.createObjectURL(blob);
+
+      // Configuramos el nombre dinámico con el año del primer dato
+
+      const nombreArchivo = `Reporte_SysLab_${datosActuales[0].periodo}.csv`;
+      const enlace = document.createElement('a');
+      enlace.href = url;
+      enlace.setAttribute('download', nombreArchivo);
+      // Ejecutamos la descarga y limpiamos
+      document.body.appendChild(enlace);
+      enlace.click();
+      // Limpieza (Importante para rendimiento en Angular 21)
+      document.body.removeChild(enlace);
+      window.URL.revokeObjectURL(url);
+  }
 }
