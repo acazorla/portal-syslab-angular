@@ -10,11 +10,12 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ModalService } from './services/modal.service'; 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardDetalleComponent } from './dashboard-detalle/dashboard-detalle.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LoginComponent, NavbarComponent, SidebarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent, DashboardComponent],
+  imports: [CommonModule, LoginComponent, NavbarComponent, SidebarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent, DashboardComponent, DashboardDetalleComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

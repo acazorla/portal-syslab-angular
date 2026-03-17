@@ -1,0 +1,221 @@
+{
+    "success": true,
+    "message": "Operación exitosa",
+    "data": [
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "examen": "Hemograma completo",
+            "ingresos": 6000,
+            "costos": 4500
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "examen": "Orina completo",
+            "ingresos": 5000,
+            "costos": 3200
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "examen": "Perfil lipídico",
+            "ingresos": 4000,
+            "costos": 2800
+        },
+                {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "examen": "Glucosa",
+            "ingresos": 4500,
+            "costos":2350
+        },
+                {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":10,
+            "examen": "Triglicéridos",
+            "ingresos": 3500,
+            "costos": 1650
+        },
+
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "examen": "Hemograma completo",
+            "ingresos": 6000,
+            "costos": 6000
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "examen": "Orina completo",
+            "ingresos": 4500,
+            "costos": 5200
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "examen": "Perfil lipídico",
+            "ingresos": 3500,
+            "costos": 3800
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "examen": "Glucosa",
+            "ingresos": 4500,
+            "costos":4350
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":11,
+            "examen": "Triglicéridos",
+            "ingresos": 3500,
+            "costos": 3650
+        },
+
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "examen": "Hemograma completo",
+            "ingresos": 7000,
+            "costos": 4000
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "examen": "Orina completo",
+            "ingresos": 4500,
+            "costos": 3200
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "examen": "Perfil lipídico",
+            "ingresos": 3500,
+            "costos": 2800
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "examen": "Glucosa",
+            "ingresos": 4500,
+            "costos":3350
+        },
+        {
+            "trimestre":"Q4",
+            "periodo": "2025",
+            "mes":12,
+            "examen": "Triglicéridos",
+            "ingresos": 5500,
+            "costos": 2650
+        },
+
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "examen": "Hemograma completo",
+            "ingresos": 8000,
+            "costos": 4000
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "examen": "Orina completo",
+            "ingresos": 5500,
+            "costos": 3200
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "examen": "Perfil lipídico",
+            "ingresos": 4500,
+            "costos": 3800
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "examen": "Glucosa",
+            "ingresos": 6500,
+            "costos":4350
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":1,
+            "examen": "Triglicéridos",
+            "ingresos": 5500,
+            "costos": 3650
+        },
+
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "examen": "Hemograma completo",
+            "ingresos": 10500,
+            "costos": 4000
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "examen": "Orina completo",
+            "ingresos": 8500,
+            "costos": 4200
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "examen": "Perfil lipídico",
+            "ingresos": 7000,
+            "costos": 3800
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "examen": "Glucosa",
+            "ingresos": 9500,
+            "costos":5350
+        },
+        {
+            "trimestre":"Q1",
+            "periodo": "2026",
+            "mes":2,
+            "examen": "Triglicéridos",
+            "ingresos": 6500,
+            "costos": 3650
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "size": 25,
+        "totalElements": 25,
+        "totalPages": 1
+    },
+    "meta": {
+        "timestamp": "2026-03-05T16:10:21.086119900-05:00",
+        "version": "1.0.0-SNAPSHOT",
+        "traceId": "f4b77d38-b3a5-47c6-a9ef-b71e362616ca"
+    }
+}

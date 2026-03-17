@@ -1,0 +1,131 @@
+<div class="dashboard">
+
+  <header class="site-header">
+      <div class="header-content">
+    <h1>Análisis de Rentabilidad por Examen</h1>
+    <p class="header-subtitle">Sistema de gestión de pacientes y exámenes médicos</p>
+  </div>
+  </header>
+
+  <div class="filter-section">
+    <label for="qSelect">Selecciona uno o más Quarters (Ctrl + Click):</label>
+    <select id="qSelect" multiple (change)="onQuarterChange($event)" class="multi-select">
+      @for (q of listaQuarters(); track q) {
+        <option [value]="q" [selected]="quartersSeleccionados().includes(q)">{{ q }}</option>
+      }
+    </select>
+    <small>* Compara la utilidad acumulada de los periodos seleccionados</small>
+  </div>
+
+  <div class="pie-container">
+    @if (datosTabla().length > 0) {
+      <canvas baseChart
+        [data]="pieChartData()"
+        [options]="pieChartOptions"
+        [type]="'pie'">
+      </canvas>
+    } @else {
+      <p class="no-data">Por favor selecciona al menos un Quarter para visualizar.</p>
+    }
+  </div>
+
+<div class="resumen-section">
+    <h3>Resumen por Quarter y Examen</h3>
+    
+    @if (resumenPorQuarter().length > 0) {
+      <div class="dashboard-cards"> @for (resumen of resumenPorQuarter(); track resumen.quarter) {
+          <div class="dashboard-card" >
+            <div class="card-header">
+              <span class="card-mes">{{ resumen.quarter }}</span>
+            </div>
+            <div class="card-body">
+              <table style="width: 100%;">
+                <thead>
+                  <tr>
+                  <th>Examen</th>
+<!--                       <th>Ingresos Acumulados</th>
+                    <th>Costos Acumulados</th> -->
+                    <th>Utilidad Neta</th>
+<!--                     <th>Margen Operativo</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (examen of resumen.examenes; track examen.examen) {
+                    <tr>
+                      <td><strong>{{ examen.examen }}</strong></td>
+<!--                       <td>{{ examen.ingresos | currency:'USD' }}</td>
+                      <td>{{ examen.costos | currency:'USD' }}</td> -->
+                      <td [ngClass]="{'text-danger': examen.utilidad < 0}">
+                        {{ examen.utilidad | currency:'USD' }}
+                      </td>
+<!--                       <td>
+                        {{ (examen.ingresos > 0 ? examen.utilidad / examen.ingresos : 0) | percent:'1.1-1' }}
+                      </td> -->
+                    </tr>
+                  }
+                </tbody>
+                <tfoot>
+                  <tr style="background-color: #f8f9fa; font-weight: bold;">
+                    <td>TOTALES</td>
+<!--                     <td>{{ resumen.totales.ingresos | currency:'USD' }}</td>
+                    <td>{{ resumen.totales.costos | currency:'USD' }}</td> -->
+                    <td [ngClass]="{'text-danger': resumen.totales.utilidad < 0}">
+                      {{ resumen.totales.utilidad | currency:'USD' }}
+                    </td>
+<!--                     <td>
+                      {{ (resumen.totales.ingresos > 0 ? resumen.totales.utilidad / resumen.totales.ingresos : 0) | percent:'1.1-1' }}
+                    </td> -->
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="no-data">No hay datos para mostrar el resumen.</p>
+    }
+  </div>
+
+  <div >
+    <h3>Detalle de Registros Seleccionados</h3>
+    <div class="no-print">
+    <button (click)="descargarReporte()" class="btn-descargar-excel" > Descargar Reporte Excel (CSV)  </button> 
+    <button class="btn-descargar-pdf" (click)="exportToPdf()">Imprimir / PDF </button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Periodo</th>
+          <th>Mes</th>
+          <th>Examen</th>
+          <th>Ingresos ($)</th>
+          <th>Costos ($)</th>
+          <th>Utilidad ($)</th>
+          <th>Margen Operativo(%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of datosTabla(); track $index) {
+          <tr>
+            <td>{{ item.trimestre }} - {{ item.periodo }}</td>
+            <td>{{ item.mes }}</td>
+            <td>{{ item.examen }}</td>
+            <td>{{ item.ingresos | currency }}</td>
+            <td>{{ item.costos | currency }}</td>
+            <td [ngClass]="{'text-danger': (item.ingresos - item.costos) < 0}">
+              {{ (item.ingresos - item.costos) | currency }}
+            </td>
+            <td>{{ (item.ingresos > 0 ? (item.ingresos - item.costos) / item.ingresos : 0) | percent:'1.1-1' }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2026 Portal SysLab - Sistema de Gestión de Pacientes</p>
+  </div>
+</footer>

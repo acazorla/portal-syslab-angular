@@ -46,6 +46,10 @@ export class SidebarComponent {
         {
           label: 'Dashboard Alta Gerencia',
           action: () => this.nav.navigate('dashboard')
+        },
+        {
+          label: 'Dashboard Detalle x ServicioAlta Gerencia',
+          action: () => this.nav.navigate('dashboard-detalle')
         }
       ]
     },

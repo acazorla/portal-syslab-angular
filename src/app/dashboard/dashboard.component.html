@@ -1,3 +1,5 @@
+
+<div class="dashboard">
 <header class="site-header">
   <div class="header-content">
     <h1>Dashboard Margen Operativo e Ingresos Netos</h1>
@@ -7,7 +9,7 @@
     </div>
 </header>
 
-<main class="container">
+<main class="contenedor">
   <h3>Trimestral</h3>
   @if (tieneDatos()) { 
   <div class="dashboard-cards">
@@ -40,9 +42,10 @@
   </div>
   }
   <h3>Mensual</h3>
-  <button (click)="descargarReporte()" class="btn-descargar-excel" >
-    Descargar Reporte Excel (CSV)
-  </button>
+  <div class="no-print">
+  <button (click)="descargarReporte()" class="btn-descargar-excel" > Descargar Reporte Excel (CSV)  </button>
+  <button class="btn-descargar-pdf" (click)="exportToPdf()">Imprimir / PDF </button>
+  </div>
     <table>
     <thead>
       <tr>
@@ -63,7 +66,7 @@
           <td>{{ getNombreMes(d.mes) }}</td>
           <td>{{ d.ingresos | currency:'USD' }}</td>
           <td>{{ d.costos | currency:'USD' }}</td>
-          <td>{{ d.ingresoNeto | currency:'USD' }}</td>
+          <td [ngClass]="{'text-danger': (d.ingresoNeto) < 0}">{{ d.ingresoNeto | currency:'USD' }}</td>
           <td>{{ d.margenOperativo | percent:'1.2-2' }}</td>
         </tr>
       }
@@ -71,7 +74,7 @@
   </table>
  
   <h3>Gráfico de Ingresos, Costos e Ingreso Neto</h3>
-  <div style="display: block; width: 100%; height: 400px;">
+  <div class="dashboard-container">
 @if (tieneDatos()) { 
     <canvas baseChart
       [data]="barChartData()"
@@ -84,7 +87,7 @@
   }
 </div>
   <h3>Gráfico de Margen Operativo (%)</h3>
-  <div style="display: block; width: 100%; height: 400px;">
+  <div class="dashboard-container">
 @if (tieneDatos()) { 
     <canvas baseChart
       [data]="lineChartData()"
@@ -95,7 +98,7 @@
   }
   </div>
 </main>
-
+</div>
 <footer class="site-footer">
   <div class="footer-content">
     <p>&copy; 2026 Portal SysLab - Sistema de Gestión de Pacientes</p>

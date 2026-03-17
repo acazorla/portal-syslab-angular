@@ -6,8 +6,8 @@
             "trimestre":"Q4",
             "periodo": "2025",
             "mes":10,
-            "ingresos": 21000,
-            "costos": 13500
+            "ingresos": 23000,
+            "costos": 14500
         },
         {
             "trimestre":"Q4",
@@ -35,7 +35,7 @@
             "periodo": "2026",
             "mes":2,
             "ingresos": 42000,
-            "costos": 20000
+            "costos": 21000
         }
     ],
     "pagination": {

@@ -8,9 +8,10 @@
       "sexo": "F",
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Perfil lipídico","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Triglicéridos","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
       ]
     },
     {
@@ -21,7 +22,8 @@
       "sexo": "M",
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+        {"nombre":"Perfil lipídico","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
+        {"nombre":"Triglicéridos","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
       ]
     },
     {
@@ -40,7 +42,8 @@
       "sexo": "M",
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+        {"nombre":"Perfil lipídico","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
+        {"nombre":"Triglicéridos","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
       ]
     },
     {
@@ -51,8 +54,9 @@
       "sexo": "F",
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
+        {"nombre":"Perfil lipídico","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"}
       ]
     },
         {
@@ -63,8 +67,8 @@
       "sexo": "M",
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"}
+        {"nombre":"Triglicéridos","fecha":"2025-12-01","rutaExamen":"../pdfs/luis_gomez_rm.pdf"},
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"}
       ]
     },
         {
@@ -76,8 +80,8 @@
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"//CPLTFSPR01/MEDICINA OCUPACIONAL/GENERAL_1432839.pdf"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
+        {"nombre":"Triglicéridos","fecha":"2025-09-15","rutaExamen":"//CPLTFSPR01/MEDICINA OCUPACIONAL/GENERAL_1432839.pdf"}
       ]
     },
         {
@@ -89,8 +93,8 @@
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/radiografia.jpg"},
-         {"nombre":"Resonancia magnética","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/radiografia.jpg"},
+         {"nombre":"Triglicéridos","fecha":"2025-09-15","rutaExamen":"../pdfs/luis_gomez_rm.pdf"}
       ]
     },    
     {
@@ -102,7 +106,7 @@
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/radiografia.jpg"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/radiografia.jpg"}
       ]
     },
         {
@@ -114,7 +118,7 @@
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/diagrama.jpg"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/diagrama.jpg"}
       ]
     },
     {
@@ -126,7 +130,7 @@
       "examenes": [
         {"nombre":"Hemograma completo","fecha":"2025-11-20","rutaExamen":"../pdfs/ana_martinez_hemograma.pdf"},
         {"nombre":"Orina completo","fecha":"2025-11-21","rutaExamen":"../pdfs/ana_martinez_rx_torax.pdf"},
-        {"nombre":"Radiografía tórax","fecha":"2025-11-20","rutaExamen":"../pdfs/diagrama.jpg"}
+        {"nombre":"Glucosa","fecha":"2025-11-20","rutaExamen":"../pdfs/diagrama.jpg"}
       ]
     }
   ]
