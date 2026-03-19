@@ -99,6 +99,7 @@
           <th>Periodo</th>
           <th>Mes</th>
           <th>Examen</th>
+          <th>Total Servicios Realizados</th>
           <th>Ingresos ($)</th>
           <th>Costos ($)</th>
           <th>Utilidad ($)</th>
@@ -111,6 +112,7 @@
             <td>{{ item.trimestre }} - {{ item.periodo }}</td>
             <td>{{ item.mes }}</td>
             <td>{{ item.examen }}</td>
+            <td>{{ item.totalServicios }}</td>
             <td>{{ item.ingresos | currency }}</td>
             <td>{{ item.costos | currency }}</td>
             <td [ngClass]="{'text-danger': (item.ingresos - item.costos) < 0}">

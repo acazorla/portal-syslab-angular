@@ -7,6 +7,7 @@
             "periodo": "2025",
             "mes":10,
             "examen": "Hemograma completo",
+            "totalServicios":200,
             "ingresos": 6000,
             "costos": 4500
         },
@@ -15,6 +16,7 @@
             "periodo": "2025",
             "mes":10,
             "examen": "Orina completo",
+            "totalServicios":335,
             "ingresos": 5000,
             "costos": 3200
         },
@@ -23,6 +25,7 @@
             "periodo": "2025",
             "mes":10,
             "examen": "Perfil lipídico",
+            "totalServicios":50,
             "ingresos": 4000,
             "costos": 2800
         },
@@ -31,6 +34,7 @@
             "periodo": "2025",
             "mes":10,
             "examen": "Glucosa",
+            "totalServicios":300,
             "ingresos": 4500,
             "costos":2350
         },
@@ -39,6 +43,7 @@
             "periodo": "2025",
             "mes":10,
             "examen": "Triglicéridos",
+            "totalServicios":140,
             "ingresos": 3500,
             "costos": 1650
         },
@@ -48,6 +53,7 @@
             "periodo": "2025",
             "mes":11,
             "examen": "Hemograma completo",
+            "totalServicios":200,
             "ingresos": 6000,
             "costos": 6000
         },
@@ -56,6 +62,7 @@
             "periodo": "2025",
             "mes":11,
             "examen": "Orina completo",
+            "totalServicios":300,
             "ingresos": 4500,
             "costos": 5200
         },
@@ -64,6 +71,7 @@
             "periodo": "2025",
             "mes":11,
             "examen": "Perfil lipídico",
+            "totalServicios":45,
             "ingresos": 3500,
             "costos": 3800
         },
@@ -72,6 +80,7 @@
             "periodo": "2025",
             "mes":11,
             "examen": "Glucosa",
+            "totalServicios":300,
             "ingresos": 4500,
             "costos":4350
         },
@@ -80,6 +89,7 @@
             "periodo": "2025",
             "mes":11,
             "examen": "Triglicéridos",
+            "totalServicios":140,
             "ingresos": 3500,
             "costos": 3650
         },
@@ -89,6 +99,7 @@
             "periodo": "2025",
             "mes":12,
             "examen": "Hemograma completo",
+            "totalServicios":235,
             "ingresos": 7000,
             "costos": 4000
         },
@@ -97,6 +108,7 @@
             "periodo": "2025",
             "mes":12,
             "examen": "Orina completo",
+            "totalServicios":300,
             "ingresos": 4500,
             "costos": 3200
         },
@@ -105,6 +117,7 @@
             "periodo": "2025",
             "mes":12,
             "examen": "Perfil lipídico",
+            "totalServicios":45,
             "ingresos": 3500,
             "costos": 2800
         },
@@ -113,6 +126,7 @@
             "periodo": "2025",
             "mes":12,
             "examen": "Glucosa",
+            "totalServicios":300,
             "ingresos": 4500,
             "costos":3350
         },
@@ -121,6 +135,7 @@
             "periodo": "2025",
             "mes":12,
             "examen": "Triglicéridos",
+            "totalServicios":225,
             "ingresos": 5500,
             "costos": 2650
         },
@@ -130,6 +145,7 @@
             "periodo": "2026",
             "mes":1,
             "examen": "Hemograma completo",
+            "totalServicios":270,
             "ingresos": 8000,
             "costos": 4000
         },
@@ -138,6 +154,7 @@
             "periodo": "2026",
             "mes":1,
             "examen": "Orina completo",
+            "totalServicios":370,
             "ingresos": 5500,
             "costos": 3200
         },
@@ -146,6 +163,7 @@
             "periodo": "2026",
             "mes":1,
             "examen": "Perfil lipídico",
+            "totalServicios":60,
             "ingresos": 4500,
             "costos": 3800
         },
@@ -154,6 +172,7 @@
             "periodo": "2026",
             "mes":1,
             "examen": "Glucosa",
+            "totalServicios":440,
             "ingresos": 6500,
             "costos":4350
         },
@@ -162,6 +181,7 @@
             "periodo": "2026",
             "mes":1,
             "examen": "Triglicéridos",
+            "totalServicios":220,
             "ingresos": 5500,
             "costos": 3650
         },
@@ -171,6 +191,7 @@
             "periodo": "2026",
             "mes":2,
             "examen": "Hemograma completo",
+            "totalServicios":350,
             "ingresos": 10500,
             "costos": 4000
         },
@@ -179,6 +200,7 @@
             "periodo": "2026",
             "mes":2,
             "examen": "Orina completo",
+            "totalServicios":570,
             "ingresos": 8500,
             "costos": 4200
         },
@@ -187,6 +209,7 @@
             "periodo": "2026",
             "mes":2,
             "examen": "Perfil lipídico",
+            "totalServicios":90,
             "ingresos": 7000,
             "costos": 3800
         },
@@ -195,6 +218,7 @@
             "periodo": "2026",
             "mes":2,
             "examen": "Glucosa",
+            "totalServicios":650,
             "ingresos": 9500,
             "costos":5350
         },
@@ -203,6 +227,7 @@
             "periodo": "2026",
             "mes":2,
             "examen": "Triglicéridos",
+            "totalServicios":260,
             "ingresos": 6500,
             "costos": 3650
         }

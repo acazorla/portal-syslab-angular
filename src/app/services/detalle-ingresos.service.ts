@@ -8,6 +8,7 @@ export interface IngresoMensual {
   periodo: string;
   mes: number;
   examen: string;
+  totalServicios: number;
   ingresos: number;
   costos: number;
 }
