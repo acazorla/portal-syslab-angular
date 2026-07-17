@@ -6,7 +6,7 @@ import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { NavigationService } from '../services/navigation.service';
 
-interface UsersResponse { users: Array<{ userName: string; name: string; password: string }>; }
+interface UsersResponse { users: Array<{ userName: string; name: string; password: string; roles: string[]}>; }
 
 @Component({
   selector: 'app-login',
@@ -45,8 +45,14 @@ export class LoginComponent {
       if (user) {
         const hashedInput = await this.hashPassword(this.password);
         if (hashedInput === user.password) {
-          this.auth.login(user.name);
-          this.nav.navigate('patients');
+          this.auth.login(user.name, user.roles);
+          
+          if (user.roles.includes('ADMIN')) {
+            this.nav.navigate('patients');
+          } else if (user.roles.includes('EPIDEMIOLOGO')) {
+            this.nav.navigate('report-attentions');
+          }
+
         } else {
           this.error = 'Usuario o contraseña incorrectos';
         }

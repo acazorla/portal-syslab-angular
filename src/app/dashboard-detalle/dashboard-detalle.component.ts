@@ -7,6 +7,13 @@ import { BaseChartDirective } from 'ng2-charts';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { IngresosService, IngresoMensual } from '../services/detalle-ingresos.service';
 import { Chart, registerables,ChartConfiguration,ChartData } from 'chart.js';
+
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+Chart.register(
+  ...registerables,
+  ChartDataLabels
+);
 // Interfaces (Se mantienen igual)
 /* interface MargenMensual extends IngresoMensual {
   ingresoNeto: number;
@@ -126,9 +133,19 @@ private ingresosService = inject(IngresosService);
       const actual = agrupadosExamen.get(item.examen) || 0;
       agrupadosExamen.set(item.examen, actual + utilidad);
     });
+      const total =Array.from(agrupadosExamen.values()).reduce((a, b) => a + b, 0);
 
     return {
-      labels: Array.from(agrupadosExamen.keys()),
+      //labels: Array.from(agrupadosExamen.keys()),
+        labels: Array.from(
+      agrupadosExamen.entries()
+    ).map(([nombre, valor]) => {
+
+      const pct =
+        ((valor / total) * 100).toFixed(1);
+
+      return `${nombre} (${pct}%)`;
+    }),
       datasets: [{
         data: Array.from(agrupadosExamen.values()),
         backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b', '#858796'],
@@ -137,7 +154,7 @@ private ingresosService = inject(IngresosService);
     };
   });
 
-  public pieChartOptions: ChartConfiguration['options'] = {
+/*   public pieChartOptions: ChartConfiguration['options'] = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -148,7 +165,54 @@ private ingresosService = inject(IngresosService);
         }
       }
     }
-  };
+  }; */
+public pieChartOptions: ChartConfiguration<'pie'>['options'] = {
+  responsive: true,
+  maintainAspectRatio: false,
+
+  plugins: {
+
+    legend: {
+      position: 'right'
+    },
+
+    tooltip: {
+      callbacks: {
+        label: (context) =>
+          ` Utilidad Total: $ ${context.parsed.toLocaleString()}`
+      }
+    },
+
+    datalabels: {
+
+      color: '#fff',
+
+      font: {
+        weight: 'bold',
+        size: 12
+      },
+
+      formatter: (value, context) => {
+
+        const dataset = context.chart.data.datasets[0].data as number[];
+
+        const total = dataset.reduce(
+          (sum, current) => sum + Number(current),
+          0
+        );
+
+        const porcentaje =
+          ((Number(value) / total) * 100).toFixed(1);
+
+        return [
+          `$ ${Number(value).toLocaleString()}`,
+          `${porcentaje}%`
+        ];
+      }
+    }
+  }
+};
+
     getNombreMes(mes: number): string {
     const fecha = new Date(2024, mes - 1, 1);
     const nombre = fecha.toLocaleString('es-ES', { month: 'long' });

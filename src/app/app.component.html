@@ -15,5 +15,8 @@
         <app-register-patient *ngIf="nav.currentView() === 'register'"></app-register-patient>
         <app-dashboard *ngIf="nav.currentView() === 'dashboard'"></app-dashboard>
         <app-dashboard-detalle *ngIf="nav.currentView() === 'dashboard-detalle'"></app-dashboard-detalle>
+        <!-- ARCG -->
+        <app-report-attentions *ngIf="nav.currentView() === 'report-attentions'"></app-report-attentions>
+        <app-report-medications *ngIf="nav.currentView() === 'report-medications'"></app-report-medications>
       </main>
     </div>

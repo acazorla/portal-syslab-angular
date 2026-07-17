@@ -1,0 +1,295 @@
+/* --- COMPORTAMIENTO GENERAL --- */
+
+:host {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  color: #1e293b;
+}
+
+/* --- CONTENEDOR ENVOLVENTE GENERAL --- */
+.report-main-wrapper {
+  padding: 0.4rem;
+  /* max-width: 1600px; */
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Separación exacta e idéntica entre los 3 bloques */
+}
+
+/* --- TARJETA 1: BANNER SUPERIOR (MORADO) --- */
+.epidemiological-header {
+ /*  background-color: #6366f1; Morado corporativo de la imagen */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px 8px 0 0;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.header-title-block h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.header-title-block p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* --- BLOQUE DE FILTROS --- */
+.filter-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.input-field-wrapper {
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  height: 36px;
+}
+
+.input-field-wrapper label {
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.input-field-wrapper input[type="date"] {
+  border: none;
+  outline: none;
+  color: #1e293b;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* --- BOTÓN CONSULTAR --- */
+.btn-consultar-purple {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+  padding: 0 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-consultar-purple:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+/* --- TARJETA 2: BARRA DE ACCIONES (BLANCA) --- */
+.action-results-bar {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counter-badge {
+  background-color: #0f172a;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.counter-badge strong {
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+/* --- BOTÓN EXCEL --- */
+.btn-excel-green {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-excel-green:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+/* --- TARJETA 3: CONTENEDOR DE LA TABLA PRINCIPAL --- */
+.table-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px; /* Redondeado en todas sus esquinas */
+  overflow: hidden; /* Corta esquinas interiores del thead y paginación */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.clinical-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.clinical-table th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.clinical-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+.clinical-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* --- PAGINACIÓN MODERNA --- */
+.pagination-controls {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1rem 1.5rem; 
+  background: #f8fafc; 
+  border-top: 1px solid #e2e8f0;
+}
+
+.pagination-controls span {
+  font-size: 0.85rem; 
+  color: #475569;
+}
+
+.pagination-buttons {
+  display: flex; 
+  gap: 0.5rem;
+}
+
+.pagination-buttons button {
+  padding: 0.4rem 1rem; 
+  border: 1px solid #cbd5e1; 
+  background: white; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.2s;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.page-indicator {
+  padding: 0.4rem 0.5rem; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  color: #1e293b;
+}
+
+/* --- REGLAS INTERNAS DE CELDAS --- */
+.patient-name { font-weight: 600; color: #0f172a; }
+.doctor-name { font-weight: 500; color: #334155; }
+.text-nowrap { white-space: nowrap; }
+.text-muted { color: #64748b; font-size: 0.8rem; }
+.badge-code { font-family: monospace; color: #475569; }
+
+.cie10-code {
+  font-family: monospace;
+  font-weight: 700;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.diag-desc { font-size: 0.85rem; color: #475569; }
+
+/* --- BADGES --- */
+.type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.type-badge.definitivo { background-color: #dcfce7; color: #15803d; }
+.type-badge.presuntivo { background-color: #fef9c3; color: #a16207; }
+.type-badge.repetitivo { background-color: #e0f2fe; color: #0369a1; }
+
+.care-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.care-badge.ambulatoria { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+.care-badge.hospitalizacion { background-color: #fae8ff; color: #86198f; border: 1px solid #f5d0fe; }
+.care-badge.emergencia { background-color: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; }
+
+/* --- SPINNER Y LOADER --- */
+.empty-state { text-align: center; padding: 4rem !important; color: #64748b; font-style: italic; }
+.spinner-state { padding: 4rem; text-align: center; color: #64748b; }
+.spinner {
+  width: 40px; height: 40px;
+  border: 4px solid #e2e8f0; border-top: 4px solid #4f46e5;
+  border-radius: 50%; margin: 0 auto 1rem auto;
+  animation: spin 1s linear infinite;
+}
+
+button:disabled { background-color: #cbd5e1 !important; color: #94a3b8 !important; cursor: not-allowed !important; }
+.animate-spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.site-footer { margin-top: 40px; padding: 20px 0; text-align: center; color: #94a3b8; font-size: 0.85rem; }
+
+/* --- 📱 RESPONSIVE MÓVIL --- */
+@media (max-width: 768px) {
+  .report-main-wrapper { padding: 1rem 0.5rem; gap: 1rem; }
+  .epidemiological-header, .action-results-bar { padding: 1rem; flex-direction: column; align-items: stretch; }
+  .filter-controls-group { flex-direction: column; align-items: stretch; }
+  .input-field-wrapper { justify-content: space-between; }
+  .btn-consultar-purple { justify-content: center; }
+}

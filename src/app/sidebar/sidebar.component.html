@@ -10,7 +10,7 @@
 
   <nav class="sidebar-nav">
     <ul class="menu-list">
-      @for (item of menuItems; track item.label) {
+      @for (item of filteredMenuItems(); track item.label) {
         <li class="menu-item">
           <button 
             class="menu-link" 

@@ -11,11 +11,14 @@ import { ModalService } from './services/modal.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardDetalleComponent } from './dashboard-detalle/dashboard-detalle.component';
+//ACG
+import { ReportAttentionsComponent } from './report-attentions/report-attentions.component';
+import { ReportMedicationsComponent } from './report-medications/report-medications.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LoginComponent, NavbarComponent, SidebarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent, DashboardComponent, DashboardDetalleComponent],
+  imports: [CommonModule, LoginComponent, NavbarComponent, SidebarComponent, PatientsComponent, RegisterPatientComponent, ChangePasswordComponent, DashboardComponent, DashboardDetalleComponent, ReportAttentionsComponent, ReportMedicationsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
